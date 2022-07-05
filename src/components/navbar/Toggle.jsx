@@ -11,7 +11,7 @@ export const Toggle = () => {
     fontSize="18px"
     fontWeight="normal"
     variant="ghost"
-    whileHover={ {scale:0.8} }
+    whileHover={ {scale:0.8, fontWeight:'bold'} }
     transition=".1s ease">
 
       <Box display="flex" alignItems="center">
