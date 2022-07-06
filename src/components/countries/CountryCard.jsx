@@ -6,8 +6,9 @@ export const CountryCard = country => {
   return(
     <GridItem as={motion.article}
     borderRadius="8px"
+    mt={ {base:'2rem'} }
     bgColor="white"
-    w="290px"
+    w="310px"
     h="fit-content"
     overflow="hidden"
     boxShadow="lg"

@@ -8,7 +8,7 @@ export const Toggle = () => {
     as={motion.button}
     w="140px"
     h="35px"
-    fontSize="18px"
+    fontSize={ {base:'16px', md:'18px', lg:'18px'} } 
     fontWeight="normal"
     variant="ghost"
     whileHover={ {scale:0.8, fontWeight:'bold'} }
