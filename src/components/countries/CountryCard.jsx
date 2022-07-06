@@ -1,13 +1,17 @@
-import { GridItem, Box, Image, Heading, Text } from '@chakra-ui/react';
+import { GridItem, Box, Image, Heading, Text, useColorModeValue } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
-
 export const CountryCard = country => {
+
+  const bgColor = useColorModeValue('white', 'gray.700');
+  const color = useColorModeValue('black', 'white');
+
   return(
     <GridItem as={motion.article}
     borderRadius="8px"
     mt={ {base:'2rem'} }
-    bgColor="white"
+    bgColor={bgColor}
+    color={color}
     w="310px"
     h="fit-content"
     overflow="hidden"
