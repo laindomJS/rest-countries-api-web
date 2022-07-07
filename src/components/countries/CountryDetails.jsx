@@ -39,9 +39,13 @@ export const CountryDetails = () => {
                 <Heading fontSize="30px" mt={ {base:'2rem', lg:'0'} } ml={ {base:'1rem', lg:'0'} } mb="1.5rem">{country.name.common}</Heading>
                 <Grid templateColumns={ {base:'repeat(1, 1fr)', lg:'repeat(2, 1fr)'} } gap="5px" w={ {base:'100vw', lg:'100%'} } mb={ {base:'1.5rem', lg:'0'} } p={ {base:'1rem', lg:'0'} }>
                   <GridItem>
-                    <Text mb=".8rem"><strong>Native Name</strong>: {Object.values(country.name.nativeName).map((key) => (
-                      String(key.common + ', ')
-                    ))}</Text>
+                    <Text mb=".8rem"><strong>Native Name</strong>: {""} 
+                      {
+                        Object.values(country.name.nativeName)[
+                          Object.values(country.name.nativeName).length - 1
+                        ].common
+                      }
+                    </Text>
                     <Text mb=".8rem"><strong>Population</strong>: {country.population.toLocaleString()}</Text>
                     <Text mb=".8rem"><strong>Region</strong>: {country.region}</Text>
                     <Text mb=".8rem"><strong>Sub Region</strong>: {!country.subregion ? 'No SubRegion' : country.subregion}</Text>
@@ -49,7 +53,7 @@ export const CountryDetails = () => {
                   </GridItem>
                   <GridItem>
                     <Text mb=".8rem"><strong>Top Level Domain</strong>: {!country.tld ? 'No TLD' : country.tld}</Text>
-                    <Text mb=".8rem"><strong>Currencies</strong>: 
+                    <Text mb=".8rem"><strong>Currencies</strong>: {" "}
                       {country.currencies[Object.keys(country.currencies)].name}
                     </Text>
                     <Text mb=".8rem"><strong>Languages</strong>: {Object.values(country.languages).join(", ")} </Text>
