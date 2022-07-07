@@ -31,7 +31,7 @@ export const CountryDetails = () => {
       </Box>) : (
         <Box w="100%">
           {country.map((country) => (
-            <Flex alignItems="center" px={ {lg:'4rem'} } flexDir={ {base:'column'} }>
+            <Flex alignItems="center" px={ {lg:'4rem'} } flexDir={ {base:'column', lg:'row'} }>
               <Image ml={ {base:'5rem'} } src={country.flags.svg} w={ {base:'330px', lg:'510px'} } boxShadow="dark-lg" mr="5rem" />
               <Box>
                 <Heading mt={ {base:'2rem', lg:'0'} } ml={ {base:'1rem', lg:'0'} } mb="1.5rem">{country.name.common}</Heading>
