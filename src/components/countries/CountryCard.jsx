@@ -25,9 +25,9 @@ export const CountryCard = country => {
         
         <Box mt=".8rem" p="1rem">
           <Heading fontSize="28px" mb=".4rem">{country.name.common}</Heading>
-          <Text>Population: {country.population}</Text>  
-          <Text>Region: {country.region}</Text>
-          <Text>Capital: {country.capital}</Text>
+          <Text><strong>Population</strong>: {country.population}</Text>  
+          <Text><strong>Region</strong>: {country.region}</Text>
+          <Text><strong>Capital</strong>: {!country.capital ? 'No Capital' : country.capital}</Text>
         </Box>
 
       </GridItem>
