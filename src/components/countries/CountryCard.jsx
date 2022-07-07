@@ -14,18 +14,18 @@ export const CountryCard = country => {
       mt={ {base:'2rem'} }
       bgColor={bgColor}
       color={color}
-      w="310px"
-      h="fit-content"
+      w="280px"
+      h="360px"
       overflow="hidden"
       boxShadow="lg"
       whileHover={{ scale: 0.8 }}
       transition=".2s ease">
 
-        <Image src={country.flags.svg} w="100%" />
+        <Image src={country.flags.png} w="100%" h="180px" />
         
         <Box mt=".8rem" p="1rem">
-          <Heading fontSize="28px" mb=".4rem">{country.name.common}</Heading>
-          <Text><strong>Population</strong>: {country.population}</Text>  
+          <Heading fontSize="22px" mb=".4rem">{country.name.common}</Heading>
+          <Text><strong>Population</strong>: {country.population.toLocaleString()}</Text>  
           <Text><strong>Region</strong>: {country.region}</Text>
           <Text><strong>Capital</strong>: {!country.capital ? 'No Capital' : country.capital}</Text>
         </Box>
