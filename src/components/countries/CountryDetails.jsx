@@ -121,7 +121,7 @@ export const CountryDetails = () => {
                     </Text>
                   </GridItem>
                 </Grid>
-                <Flex flexDirection={ {base:'column', lg:'row'} } as="section" mt="2rem" w="100%" alignItems="center">
+                <Flex flexDirection={ {base:'column', lg:'row'} } as="section" mt="2rem" w="100%" alignItems="center" flexWrap="wrap">
                   <Heading as="h3" mb={ {base:'1rem', lg:'0'} } fontWeight="normal" fontSize="18px">Border Countries: {" "}</Heading>
                     {!country.borders ? (<Heading as="h3" fontSize="18px" fontWeight="normal">This Country not have borders</Heading>) : (
                       country.borders.map((country) => (
