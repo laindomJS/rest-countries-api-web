@@ -113,7 +113,9 @@ export const CountryDetails = () => {
                     </Text>
                     <Text mb=".8rem">
                       <strong>Currencies</strong>:{" "}
-                      {country.currencies[Object.keys(country.currencies)].name}
+                      {Object.entries(country.currencies).map(([key, value]) => ( 
+                        <Text fontSize="15px">{value.name}</Text>
+                      ))}
                     </Text>
                     <Text mb=".8rem">
                       <strong>Languages</strong>:{" "}
@@ -125,7 +127,7 @@ export const CountryDetails = () => {
                   <Heading as="h3" mb={ {base:'1rem', lg:'0'} } fontWeight="normal" fontSize="18px">Border Countries: {" "}</Heading>
                     {!country.borders ? (<Heading as="h3" fontSize="18px" fontWeight="normal">This Country not have borders</Heading>) : (
                       country.borders.map((country) => (
-                      <Button ml="2rem" mr={ {base:'2rem', lg:'0'} } mb={ {base:'1rem', lg:'0'} } boxShadow="lg" w="100px" key={country}>
+                      <Button ml="2rem" mt="1rem" mr={ {base:'2rem', lg:'0'} } mb={ {base:'1rem', lg:'0'} } boxShadow="lg" w="100px" key={country}>
                         {country}
                       </Button>
                       ))

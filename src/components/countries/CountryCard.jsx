@@ -10,6 +10,7 @@ export const CountryCard = country => {
   return(
     <Link to={`/country/${country.name.common}`}>
       <GridItem as={motion.article}
+      initial={ {opacity: 0} }
       borderRadius="8px"
       mt={ {base:'2rem'} }
       bgColor={bgColor}
@@ -18,7 +19,8 @@ export const CountryCard = country => {
       h="360px"
       overflow="hidden"
       boxShadow="lg"
-      whileHover={{ scale: 0.8 }}
+      whileHover={{ scale: 0.9 }}
+      whileInView={ {opacity: 1} }
       transition=".2s ease">
 
         <Image src={country.flags.png} w="100%" h="180px" />
