@@ -7,7 +7,7 @@ export const Navbar = () => {
   const color = useColorModeValue('black', 'white');
 
   return(
-    <Flex as="nav" p={ {base:'1rem', md:'2rem', lg:'2rem'} } color={color} justifyContent="space-between" alignItems="center" bgColor={bgColor}boxShadow="lg">
+    <Flex as="nav" p={ {base:'1rem', md:'2rem', lg:'2rem'} } color={color} justifyContent="space-between" alignItems="center" bgColor={bgColor} boxShadow="lg">
       <Heading fontSize={ {base:'16px', lg:'25px'} } fontWeight="bold">Where in the world?</Heading>
       <Toggle />
     </Flex>

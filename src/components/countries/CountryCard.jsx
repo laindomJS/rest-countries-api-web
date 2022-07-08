@@ -17,7 +17,6 @@ export const CountryCard = country => {
       color={color}
       w="280px"
       h="360px"
-      overflow="hidden"
       boxShadow="lg"
       whileHover={{ scale: 0.9 }}
       whileInView={ {opacity: 1} }

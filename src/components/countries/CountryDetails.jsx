@@ -1,11 +1,10 @@
-import { Heading, Text, Button, Flex, Image, Grid, GridItem, Spinner, Box, Icon } from '@chakra-ui/react';
-import { FaArrowLeft } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { Heading, Text, Button, Flex, Image, Grid, GridItem, Spinner, Box } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';   
 
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { getCountry } from '../../services/GetCountries';
+import { ButtonBack } from './ButtonBack';
 
 export const CountryDetails = () => {
   const [country, setCountry] = useState([]);
@@ -17,24 +16,11 @@ export const CountryDetails = () => {
 
   return (
     <>
-      <Link to="/">
-        <Button
-          as={motion.button}
-          m={{ base: "2rem", lg: "4rem" }}
-          w="120px"
-          boxShadow="lg"
-          whileHover={{ y: "5px", scale: 1.1 }}
-          transition=".1s ease"
-        >
-          <Flex alignItems="center" fontWeight="normal">
-            <Icon as={FaArrowLeft} mr=".5rem" />
-            <Text>Back</Text>
-          </Flex>
-        </Button>
-      </Link>
+
+      <ButtonBack />
 
       {country.length == 0 ? (
-        <Box position="relative" w="100%">
+        <Box position="relative" w="100%" as="main">
           <Spinner
             size="lg"
             color="blue"
@@ -71,7 +57,8 @@ export const CountryDetails = () => {
                   {country.name.common}
                 </Heading>
 
-                <Grid as="section"
+                <Grid
+                  as="section"
                   templateColumns={{
                     base: "repeat(1, 1fr)",
                     lg: "repeat(2, 1fr)",
@@ -113,9 +100,9 @@ export const CountryDetails = () => {
                     </Text>
                     <Text mb=".8rem">
                       <strong>Currencies</strong>:{" "}
-                      {Object.entries(country.currencies).map(([key, value]) => ( 
-                        value.name
-                      ))}
+                      {Object.entries(country.currencies).map(
+                        ([key, value]) => value.name
+                      )}
                     </Text>
                     <Text mb=".8rem">
                       <strong>Languages</strong>:{" "}
@@ -123,15 +110,41 @@ export const CountryDetails = () => {
                     </Text>
                   </GridItem>
                 </Grid>
-                <Flex flexDirection={ {base:'column', lg:'row'} } as="section" mt="2rem" w="100%" alignItems="center" flexWrap="wrap">
-                  <Heading as="h3" mb={ {base:'1rem', lg:'0'} } fontWeight="normal" fontSize="18px">Border Countries: {" "}</Heading>
-                    {!country.borders ? (<Heading as="h3" fontSize="18px" fontWeight="normal">This Country not have borders</Heading>) : (
-                      country.borders.map((country) => (
-                      <Button ml="2rem" mt="1rem" mr={ {base:'2rem', lg:'0'} } mb={ {base:'1rem', lg:'0'} } boxShadow="lg" w="100px" key={country}>
+                <Flex
+                  flexDirection={{ base: "column", lg: "row" }}
+                  as="section"
+                  mt="2rem"
+                  w="100%"
+                  alignItems="center"
+                  flexWrap="wrap"
+                >
+                  <Heading
+                    as="h3"
+                    mb={{ base: "1rem", lg: "0" }}
+                    fontWeight="normal"
+                    fontSize="18px"
+                  >
+                    Border Countries:{" "}
+                  </Heading>
+                  {!country.borders ? (
+                    <Heading as="h3" fontSize="18px" fontWeight="normal">
+                      This Country not have borders
+                    </Heading>
+                  ) : (
+                    country.borders.map((country) => (
+                      <Button
+                        ml="2rem"
+                        mt="1rem"
+                        mr={{ base: "2rem", lg: "0" }}
+                        mb={{ base: "1rem", lg: "0" }}
+                        boxShadow="lg"
+                        w="100px"
+                        key={country}
+                      >
                         {country}
                       </Button>
-                      ))
-                    )}
+                    ))
+                  )}
                 </Flex>
               </Box>
             </Flex>
