@@ -114,7 +114,7 @@ export const CountryDetails = () => {
                     <Text mb=".8rem">
                       <strong>Currencies</strong>:{" "}
                       {Object.entries(country.currencies).map(([key, value]) => ( 
-                        <Text fontSize="15px">{value.name}</Text>
+                        value.name
                       ))}
                     </Text>
                     <Text mb=".8rem">
