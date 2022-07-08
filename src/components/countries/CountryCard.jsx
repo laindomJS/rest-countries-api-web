@@ -23,8 +23,8 @@ export const CountryCard = country => {
 
         <Image src={country.flags.png} w="100%" h="180px" />
         
-        <Box mt=".8rem" p="1rem">
-          <Heading fontSize="22px" mb=".4rem">{country.name.common}</Heading>
+        <Box as="section" mt=".8rem" p="1rem">
+          <Heading as="h2" fontSize="22px" mb=".4rem">{country.name.common}</Heading>
           <Text><strong>Population</strong>: {country.population.toLocaleString()}</Text>  
           <Text><strong>Region</strong>: {country.region}</Text>
           <Text><strong>Capital</strong>: {!country.capital ? 'No Capital' : country.capital}</Text>
