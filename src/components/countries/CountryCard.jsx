@@ -22,7 +22,7 @@ export const CountryCard = country => {
       whileInView={ {opacity: 1} }
       transition=".2s ease">
 
-        <Image src={country.flags.png} w="100%" h="180px" />
+        <Image src={country.flags.png} w="100%" h="180px" alt={`${country.name.common} flag`} />
         
         <Box as="section" mt=".8rem" p="1rem">
           <Heading as="h2" fontSize="22px" mb=".4rem">{country.name.common}</Heading>

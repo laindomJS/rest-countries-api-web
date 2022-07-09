@@ -10,7 +10,7 @@ function App() {
   const bgColor = useColorModeValue('gray.50', 'gray.800');
 
   return (
-    <Box w="100%" h="100vh" bgColor={bgColor}>
+    <Box w="100%" bgColor={bgColor}>
       <Navbar />
       <Routes>
         <Route path="/" element={ <AllCountries /> } />
